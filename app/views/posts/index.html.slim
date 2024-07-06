@@ -1,0 +1,14 @@
+p style="color: green" = notice
+
+h1 Posts
+
+#posts
+  - @posts.each do |post|
+    h1 = post.title
+    div 
+      b Author:
+      = post.user.email
+    p
+      = link_to "Show this post", post
+
+= link_to "New post", new_post_path

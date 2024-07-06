@@ -1,0 +1,17 @@
+p style="color: green" = notice
+
+h1 = @post.title
+p
+  strong Author Email:
+  = @post.user.email
+
+p
+  strong Content:
+  = @post.content
+
+div
+  => link_to "Edit this post", edit_post_path(@post)
+  '|
+  =< link_to "Back to posts", posts_path
+
+  = button_to "Destroy this post", @post, method: :delete
