@@ -68,3 +68,4 @@ end
 
 gem "slim-rails"
 gem 'devise'
+gem 'mysql2', '~> 0.5.3'
