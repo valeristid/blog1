@@ -8,23 +8,19 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: userDB
-  password: 7777
-  socket: /var/run/mysqld/mysqld.sock
-  host: localhost
+  username: <%= ENV.fetch("DB_USERNAME") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
+  host: <%= ENV.fetch("DB_HOST") %>
+  port: <%= ENV.fetch("DB_PORT") { 3306 } %>
 
 development:
   <<: *default
-  database: blogdb_development
+  database: blog1_development
 
 test:
   <<: *default
-  database: blog_test
+  database: blog1_test
 
 production:
   <<: *default
-  database: blogdb_production
-  username: userDB
-  password: 7777
-  host: localhost
-
+  database: <%= ENV.fetch("DB_NAME_PROD") %>

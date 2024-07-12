@@ -1,24 +1,13 @@
 # README
+Скачиваем
+git clone https://github.com/valeristid/blog1
+cd blog1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Собираем докер образ
+docker-compose up --build
 
-Things you may want to cover:
+Производим миграцию баз данных
+docker-compose exec web rails db:create db:migrate
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Открываем приложение в бразуере
+http://localhost:3001
